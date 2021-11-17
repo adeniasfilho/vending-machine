@@ -1,0 +1,50 @@
+public class VendingMachine {
+    private final static DisplayOption[] escolhas = DisplayOption.opcao();
+    public static void main(String[] args) {
+        DisplayOption opcao = getRequest();
+
+        while(opcao != DisplayOption.DESISTIR) {
+            switch(opcao) {
+                case  DOCE_A(1):
+                  System.out.printf("%nValor do doce R$6,00");
+                  break;
+                case DOCE_B(2):
+                  System.out.println("%nValor do doce R$7,00");
+                  break;
+                case DOCE_C(3):
+                  System.out.println("%nValor do doce R$8,00");
+                  break;
+                case DESISTIR(4):
+                  System.out.println("%nOperação cancelada");
+                  break;
+            }
+            opcao = getRequest();
+        }
+
+    }
+
+    private static DisplayOption getRequest() {
+        int request = 4;
+        System.out.printf("%nEscolha a opção%n%s%n%s%n%s%n%s%s",
+            "1 - Doce_A",
+            "2 - Doce_B",
+            "3 - Doce_C",
+            "4 - Desistir da escolha");
+
+        try {
+            Scanner input = new Scanner(System.in);
+
+            do {
+                System.out.printf("%n? ");
+                request = input.nextInt();
+            }while ((request < 1) || (request > 4));
+        }
+        catch(NoSuchElementException NoSuchElementException) {
+            System.out.println("Escolha inválida. Fim.");
+        }
+        return opcao[request - 1];
+    }
+
+
+    
+}

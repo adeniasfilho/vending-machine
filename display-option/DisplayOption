@@ -4,9 +4,9 @@ public enum DisplayOption {
     DOCE_C(3),
     DESISTIR(4);
 
-    private final int atual;
+    private final int opcao;
     
-    private DisplayOption(int atual) {
-        this.atual = atual;
+    private DisplayOption(int opcao) {
+        this.opcao = opcao;
     } 
 }
