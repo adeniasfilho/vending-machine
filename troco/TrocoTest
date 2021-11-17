@@ -1,0 +1,8 @@
+public class TrocoTest {
+    public static void main(String[] args) {
+        Troco meuTroco = new Troco("Vending Machine");
+
+    meuTroco.displayMenssagem();
+    meuTroco.determinarTroco();
+    }
+}

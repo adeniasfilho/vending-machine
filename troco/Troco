@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Troco {
+    private String displayOption;
+    
+    public Troco(String displayOption) {
+        displayOption = escolhas;
+    }
+
+    public String getDisplayOption() {
+        return displayOption;
+    } 
+
+    public void setDisplayOption(int escolhas) {
+        displayOption = escolhas;
+    }
+
+    public void displayMensagem() {
+        System.out.printf("Olá, escolha o tipo de DOCE na \n%s!\n\n",
+            getDisplayOption());
+    }
+
+    public void detreminarTroco() {
+        Scanner input = new Scanner( System.in);
+        int total; //soma das notas
+        int notasInseridas; // número de notas inseridas
+        int nota; //valor da nota
+        int troco; 
+
+        total = 0; // inicializa o total
+        notasInseridas = 0; // inicializa o contador de loops
+
+        System.out.print("Insira a nota ou -1 para desistir da escolha: ");
+        nota = input.nextInt();
+
+        while( nota !=1) {
+            total = total + nota;
+            notasInseridas = notasInseridas + 1;
+
+            System.out.print("Insira a nota ou -1 para desistir da escolha: ");
+            nota = input.nextInt();
+        }
+
+        if(notasInseridas !=0) {
+            troco = total - notasInseridas;
+
+            System.out.printf("\nTotal de %d notas inseridas é %d\n",
+                notasInseridas, total);
+            System.out.printf("Seu troco é %d\n", troco );
+        }
+        else {
+            System.out.println( "Notas não inseridas");
+        } 
+    }
+}
