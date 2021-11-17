@@ -1,7 +1,8 @@
 public enum DisplayOption {
     DOCE_A(1),
     DOCE_B(2),
-    DOCE_C(3);
+    DOCE_C(3),
+    DESISTIR(4);
 
     private final int atual;
     
