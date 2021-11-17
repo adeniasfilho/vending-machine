@@ -1,0 +1,11 @@
+public enum DisplayOption {
+    DOCE_A(1),
+    DOCE_B(2),
+    DOCE_C(3);
+
+    private final int atual;
+    
+    private DisplayOption(int atual) {
+        this.atual = atual;
+    } 
+}
